@@ -1,0 +1,33 @@
+# Hardened .htaccess - SECURE: Hardened Apache Server Config
+# Disable directory listing
+Options -Indexes
+
+# Disable server signature
+ServerSignature Off
+
+# Block access to sensitive directories
+<IfModule mod_rewrite.c>
+    RewriteRule ^config/ - [F,L]
+    RewriteRule ^Middleware/ - [F,L]
+    RewriteRule ^Models/ - [F,L]
+    RewriteRule ^Controllers/ - [F,L]
+</IfModule>
+
+# Block hidden files
+<FilesMatch "^\.">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Prevent PHP execution in uploads
+<IfModule mod_rewrite.c>
+    RewriteRule ^uploads/.*\.php$ - [F,L]
+</IfModule>
+
+# Security headers
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "DENY"
+    Header set X-XSS-Protection "1; mode=block"
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>

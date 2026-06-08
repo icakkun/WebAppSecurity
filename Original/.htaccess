@@ -1,0 +1,7 @@
+# Basic .htaccess - INSECURE: minimal configuration
+RewriteEngine On
+RewriteBase /
+
+# No directory listing prevention
+# No file access restrictions
+# No security headers
