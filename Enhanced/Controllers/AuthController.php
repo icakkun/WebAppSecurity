@@ -33,7 +33,7 @@ class AuthController {
 
                 // Rate limiting check
                 if (RateLimiter::isRateLimited($email)) {
-                    $error = "Too many failed login attempts. Please try again after 15 minutes.";
+                    $error = "Too many failed login attempts. Please try again after " . (LOGIN_LOCKOUT_TIME / 60) . " minutes.";
                 } else {
                     $user = $this->userModel->findByEmail($email);
 

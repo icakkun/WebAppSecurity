@@ -547,7 +547,7 @@ class Database {
 |--------|----------|----------|
 | Driver | `mysqli` | `PDO` |
 | Queries | String concatenation | Prepared statements with bound parameters |
-| DB User | `root` (full privileges) | Dedicated user with limited privileges |
+| DB User | `root` (full privileges) | `root` (localhost dev; dedicated user with limited privileges recommended in production) |
 | Error Handling | `die(mysqli_error())` | `error_log()` + generic user message |
 | Charset | Not specified | `utf8mb4` |
 | Emulated Prepares | N/A | Disabled (`ATTR_EMULATE_PREPARES => false`) |

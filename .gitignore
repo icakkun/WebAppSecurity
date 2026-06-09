@@ -20,3 +20,4 @@ Original/uploads/*
 !Original/uploads/.gitkeep
 Enhanced/uploads/*
 !Enhanced/uploads/.gitkeep
+!Enhanced/uploads/.htaccess

@@ -2,12 +2,12 @@
 // Security configuration constants
 
 // Session settings
-define('SESSION_LIFETIME', 1800); // 30 minutes
+define('SESSION_LIFETIME', 300); // 5 minutes
 define('SESSION_NAME', 'SECURE_INVENTORY_SESSION');
 
 // Rate limiting
 define('MAX_LOGIN_ATTEMPTS', 5);
-define('LOGIN_LOCKOUT_TIME', 900); // 15 minutes in seconds
+define('LOGIN_LOCKOUT_TIME', 300); // 5 minutes in seconds
 
 // Password policy
 define('PASSWORD_MIN_LENGTH', 8);
